@@ -4,3 +4,12 @@
 
 # Optional: saubere Pretty-URLs sind bei Astro ohnehin ok.
 # Optional: Admin (Decap) läuft unter /admin
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 301
+
+[[redirects]]
+  from = "/admin/"
+  to = "/admin/index.html"
+  status = 301
