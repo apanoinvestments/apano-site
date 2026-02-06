@@ -1,17 +1,29 @@
 ---
-import Section from "./Section.astro";
-const { kicker, headline, items } = Astro.props;
+const { kicker, headline, items = [] } = Astro.props;
 ---
-<Section kicker={kicker} headline={headline}>
-  <div class="grid" style="grid-template-columns: repeat(12, 1fr);">
-    {(items ?? []).map((it) => (
-      <article class="card" style="grid-column: span 6;">
-        <h3 style="font-size:18px;">{it.title}</h3>
-        <p style="margin-top:8px;">{it.text}</p>
-        <div style="margin-top:14px;">
-          <a class="btn secondary" href={it.href}>{it.ctaLabel ?? "Mehr"}</a>
-        </div>
-      </article>
-    ))}
+
+<section class="section">
+  <div class="container">
+    {kicker && <div class="kicker">{kicker}</div>}
+    {headline && <h2 class="h2">{headline}</h2>}
+
+    <div class="grid teasers" style="margin-top:18px;">
+      {items.map((t) => (
+        <a class="teaser" href={t.href}>
+          <div class="teaser__media">
+            {t.image?.src ? (
+              <img src={t.image.src} alt={t.image.alt ?? ""} loading="lazy" />
+            ) : (
+              <div class="teaser__mediaPh" aria-hidden="true"></div>
+            )}
+          </div>
+          <div class="teaser__body">
+            <div class="teaser__title">{t.title}</div>
+            {t.text && <div class="small" style="margin-top:6px;">{t.text}</div>}
+            <div class="teaser__cta">{t.ctaLabel ?? "Öffnen"} →</div>
+          </div>
+        </a>
+      ))}
+    </div>
   </div>
-</Section>
+</section>

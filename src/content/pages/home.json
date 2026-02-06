@@ -13,8 +13,18 @@
   "sections": [
     {
       "type": "hero",
+      "kicker": "apano Investments",
       "headline": "anders denken zahlt sich aus.",
       "subheadline": "Ausgewählte Anlageprodukte, verständliche Einordnung und regelmäßige Updates.",
+      "image": {
+        "src": "/assets/home/hero.jpg",
+        "alt": "Kapitalmarkt und Strategie – symbolisches Motiv"
+      },
+      "highlights": [
+        { "label": "Wertsicherungskonzept" },
+        { "label": "ETF-basierte Strategien" },
+        { "label": "Regelmäßige Updates" }
+      ],
       "cta": [
         { "label": "Produkte entdecken", "href": "/produkte", "variant": "primary" },
         { "label": "Info anfordern", "href": "/service/info-anfordern", "variant": "secondary" }
@@ -23,10 +33,14 @@
     {
       "type": "trustbar",
       "items": [
-        { "label": "Inhabergeführt" },
-        { "label": "Webinare" },
-        { "label": "Kurse & Berichte" },
-        { "label": "Download-Center" }
+        { "label": "Inhabergeführt", "icon": "shield" },
+        { "label": "Webinare", "icon": "video" },
+        { "label": "Kurse & Berichte", "icon": "chart" },
+        { "label": "Download-Center", "icon": "download" }
+      ],
+      "logos": [
+        { "src": "/assets/home/trust-1.svg", "alt": "Partner/Quelle 1" },
+        { "src": "/assets/home/trust-2.svg", "alt": "Partner/Quelle 2" }
       ]
     },
     {
@@ -38,19 +52,22 @@
           "title": "apano Global Systematik",
           "text": "ETF-basierter Aktienfonds mit Wertsicherungskonzept.",
           "href": "/produkte/apano-global-systematik",
-          "ctaLabel": "Zum Produkt"
+          "image": { "src": "/assets/home/card-global-systematik.jpg", "alt": "Global Systematik" },
+          "badge": "ETF & Systematik"
         },
         {
           "title": "Solit Edelmetalldepot",
           "text": "Edelmetalle günstig kaufen und sicher einlagern.",
           "href": "/produkte/solit-edelmetalldepot",
-          "ctaLabel": "Zum Produkt"
+          "image": { "src": "/assets/home/card-edelmetall.jpg", "alt": "Edelmetall Depot" },
+          "badge": "Sachwerte"
         },
         {
           "title": "Immobilien-Investments",
           "text": "Themen und Zugänge rund um Immobilien-Investments.",
           "href": "/produkte/immobilien",
-          "ctaLabel": "Mehr erfahren"
+          "image": { "src": "/assets/home/card-immobilien.jpg", "alt": "Immobilien" },
+          "badge": "Immobilien"
         }
       ]
     },
@@ -59,8 +76,20 @@
       "kicker": "Aktuell bleiben",
       "headline": "Updates, Einordnung und Aufzeichnungen.",
       "items": [
-        { "title": "Webinare", "text": "Aufzeichnungen und Themenfilter.", "href": "/wissen/webinare", "ctaLabel": "Zu den Webinaren" },
-        { "title": "News", "text": "Neuigkeiten und Beiträge.", "href": "/wissen/news", "ctaLabel": "Zu den News" }
+        {
+          "title": "Webinare",
+          "text": "Aufzeichnungen, Themenfilter und Termine.",
+          "href": "/wissen/webinare",
+          "ctaLabel": "Zu den Webinaren",
+          "image": { "src": "/assets/home/teaser-webinare.jpg", "alt": "Webinar-Vorschau" }
+        },
+        {
+          "title": "News",
+          "text": "Neuigkeiten, Beiträge und Einordnung.",
+          "href": "/wissen/news",
+          "ctaLabel": "Zu den News",
+          "image": { "src": "/assets/home/teaser-news.jpg", "alt": "News-Vorschau" }
+        }
       ]
     },
     {
@@ -68,10 +97,10 @@
       "kicker": "Service",
       "headline": "Dokumente und Wege zur Umsetzung.",
       "items": [
-        { "title": "Download-Center", "href": "/service/downloads" },
-        { "title": "Geldanlage per Sparplan", "href": "/service/sparplan" },
-        { "title": "comdirect Depot", "href": "/service/comdirect-depot" },
-        { "title": "Kontakt", "href": "/service/kontakt" }
+        { "label": "Download-Center", "href": "/service/downloads" },
+        { "label": "Geldanlage per Sparplan", "href": "/service/sparplan" },
+        { "label": "comdirect Depot", "href": "/service/comdirect-depot" },
+        { "label": "Kontakt", "href": "/service/kontakt" }
       ]
     }
   ],

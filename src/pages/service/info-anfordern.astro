@@ -1,0 +1,135 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import home from "../../content/pages/home.json"; // für nav/footer (damit wir nichts doppelt pflegen)
+import content from "../../content/pages/info-anfordern.json";
+---
+
+<BaseLayout
+  title={content.page_title}
+  description={content.meta_description}
+  nav={home.nav}
+  footer={home.footer}
+>
+  <section class="section" style="border-top:none;">
+    <div class="container">
+      {content.hero?.kicker && <div class="kicker">{content.hero.kicker}</div>}
+      <h1 style="margin-top:10px;font-size:42px;letter-spacing:-.03em;line-height:1.12;">
+        {content.hero.headline}
+      </h1>
+      {content.hero?.subheadline && (
+        <p style="margin-top:12px;max-width:70ch;font-size:18px;">
+          {content.hero.subheadline}
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns: 1.2fr .8fr; gap:18px;">
+      <div class="card">
+        <h2 class="h2" style="margin-top:0;">{content.form.headline}</h2>
+        <p class="small" style="margin-top:6px;">{content.form.hint}</p>
+
+        <!-- Static form (MVP). Für echte Zustellung: Netlify Forms oder API später. -->
+        <form
+          name="info-anfordern"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          style="margin-top:16px;display:grid;gap:12px;"
+        >
+          <input type="hidden" name="form-name" value="info-anfordern" />
+          <p style="display:none;">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <label>
+              <div class="small">Vorname *</div>
+              <input name="firstname" required class="field" />
+            </label>
+            <label>
+              <div class="small">Nachname *</div>
+              <input name="lastname" required class="field" />
+            </label>
+          </div>
+
+          <label>
+            <div class="small">E-Mail *</div>
+            <input name="email" type="email" required class="field" />
+          </label>
+
+          <label>
+            <div class="small">Telefon (optional)</div>
+            <input name="phone" class="field" />
+          </label>
+
+          <fieldset style="border:1px solid var(--line);border-radius:12px;padding:12px;">
+            <legend class="small" style="padding:0 6px;">Themen</legend>
+            <div style="display:grid;gap:8px;margin-top:6px;">
+              <label class="small"><input type="checkbox" name="topic" value="apano Global Systematik" /> apano Global Systematik</label>
+              <label class="small"><input type="checkbox" name="topic" value="Solit Edelmetalldepot" /> Solit Edelmetalldepot</label>
+              <label class="small"><input type="checkbox" name="topic" value="Immobilien-Investments" /> Immobilien-Investments</label>
+              <label class="small"><input type="checkbox" name="topic" value="Webinare & Updates" /> Webinare & Updates</label>
+            </div>
+          </fieldset>
+
+          <label>
+            <div class="small">Nachricht (optional)</div>
+            <textarea name="message" rows="4" class="field"></textarea>
+          </label>
+
+          <label class="small" style="display:flex;gap:8px;align-items:flex-start;">
+            <input type="checkbox" name="privacy" required />
+            <span>{content.form.privacy_hint}</span>
+          </label>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;">
+            <button class="btn primary" type="submit">{content.form.cta_label}</button>
+            <a class="btn secondary" href="/service/kontakt">Stattdessen Kontakt</a>
+          </div>
+        </form>
+      </div>
+
+      <aside class="grid" style="gap:12px;">
+        <div class="card">
+          <div class="kicker">Hinweis</div>
+          <p style="margin-top:8px;">
+            Die Anfrage ist unverbindlich. Sie erhalten Informationen zu den ausgewählten Themen.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="h3">{content.sidebar.headline}</h3>
+          <div style="display:grid;gap:12px;margin-top:10px;">
+            {(content.sidebar.items ?? []).map((it) => (
+              <a class="card" style="padding:14px;" href={it.href}>
+                <div style="font-weight:800;">{it.title}</div>
+                <div class="small" style="margin-top:6px;">{it.text}</div>
+                <div class="small" style="margin-top:10px;font-weight:800;color:var(--cta);">
+                  {it.ctaLabel} →
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <style>
+    .field{
+      width:100%;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      margin-top:6px;
+      font: inherit;
+      background:#fff;
+    }
+    textarea.field{ resize: vertical; }
+    @media (max-width: 900px){
+      .container[style*="grid-template-columns"]{ grid-template-columns:1fr !important; }
+    }
+  </style>
+</BaseLayout>

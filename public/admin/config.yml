@@ -17,6 +17,41 @@ collections:
         fields:
           - { label: "Page Title", name: "page_title", widget: "string" }
           - { label: "Meta Description", name: "meta_description", widget: "string" }
+          
+          - name: "info-anfordern"
+            label: "Info anfordern"
+            file: "src/content/pages/info-anfordern.json"
+            fields:
+              - { label: "Page Title", name: "page_title", widget: "string" }
+              - { label: "Meta Description", name: "meta_description", widget: "string" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Kicker", name: "kicker", widget: "string", required: false }
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "Subheadline", name: "subheadline", widget: "text", required: false }
+              - label: "Form"
+                name: "form"
+                widget: "object"
+                fields:
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "Hinweis", name: "hint", widget: "string", required: false }
+                  - { label: "CTA Label", name: "cta_label", widget: "string" }
+                  - { label: "Datenschutz Hinweis", name: "privacy_hint", widget: "text" }
+              - label: "Sidebar"
+                name: "sidebar"
+                widget: "object"
+                fields:
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Text", name: "text", widget: "text", required: false }
+                      - { label: "Href", name: "href", widget: "string" }
+                      - { label: "CTA Label", name: "ctaLabel", widget: "string" }
 
           - label: "Navigation"
             name: "nav"
@@ -43,6 +78,14 @@ collections:
               - { label: "Kicker", name: "kicker", widget: "string", required: false }
               - { label: "Headline", name: "headline", widget: "string", required: false }
               - { label: "Subheadline", name: "subheadline", widget: "string", required: false }
+              
+              - label: "Hero Bild"
+                name: "image"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Bild", name: "src", widget: "image", required: false }
+                  - { label: "Alt-Text", name: "alt", widget: "string", required: false }
 
               - label: "CTA (nur Hero)"
                 name: "cta"

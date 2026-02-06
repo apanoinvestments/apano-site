@@ -1,0 +1,22 @@
+{
+  "page_title": "Info anfordern | apano Investments",
+  "meta_description": "Fordern Sie Informationen an – wir senden Ihnen die gewünschten Unterlagen und melden uns bei Rückfragen.",
+  "hero": {
+    "kicker": "Service",
+    "headline": "Informationen anfordern",
+    "subheadline": "Wählen Sie die gewünschten Themen. Wir senden Ihnen die passenden Unterlagen zu."
+  },
+  "form": {
+    "headline": "Ihre Anfrage",
+    "hint": "Pflichtfelder sind mit * markiert.",
+    "cta_label": "Infos anfordern",
+    "privacy_hint": "Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben gemäß Datenschutz zu."
+  },
+  "sidebar": {
+    "headline": "Alternativ",
+    "items": [
+      { "title": "Download-Center", "text": "Dokumente direkt herunterladen.", "href": "/service/downloads", "ctaLabel": "Zum Download-Center" },
+      { "title": "Kontakt", "text": "Sie möchten direkt sprechen oder schreiben?", "href": "/service/kontakt", "ctaLabel": "Kontakt" }
+    ]
+  }
+}

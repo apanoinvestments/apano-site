@@ -2,8 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-# Optional: saubere Pretty-URLs sind bei Astro ohnehin ok.
-# Optional: Admin (Decap) läuft unter /admin
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"

@@ -1,17 +1,33 @@
 ---
-import Section from "./Section.astro";
-const { kicker, headline, items } = Astro.props;
+const { kicker, headline, items = [] } = Astro.props;
 ---
-<Section kicker={kicker} headline={headline}>
-  <div class="grid cards">
-    {(items ?? []).map((it) => (
-      <article class="card" style="grid-column: span 4;">
-        <h3 style="font-size:18px;">{it.title}</h3>
-        <p style="margin-top:8px;">{it.text}</p>
-        <div style="margin-top:14px;">
-          <a class="btn secondary" href={it.href}>{it.ctaLabel ?? "Mehr"}</a>
-        </div>
-      </article>
-    ))}
+
+<section class="section">
+  <div class="container">
+    {kicker && <div class="kicker">{kicker}</div>}
+    {headline && <h2 class="h2">{headline}</h2>}
+
+    <div class="grid cards cards--media" style="margin-top:18px;">
+      {items.map((it) => (
+        <article class="card card--mediaItem">
+          <div class="card__media">
+            {it.image?.src ? (
+              <img src={it.image.src} alt={it.image.alt ?? ""} loading="lazy" />
+            ) : (
+              <div class="card__mediaPh" aria-hidden="true"></div>
+            )}
+            {it.badge ? <span class="badge">{it.badge}</span> : null}
+          </div>
+
+          <div class="card__body">
+            <h3 class="h3">{it.title}</h3>
+            {it.text && <p style="margin-top:8px;">{it.text}</p>}
+            <div style="margin-top:14px;">
+              <a class="btn secondary" href={it.href}>Mehr erfahren</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
-</Section>
+</section>
