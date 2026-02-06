@@ -1,0 +1,19 @@
+---
+const { headline, subheadline, cta } = Astro.props;
+---
+<section style="padding:72px 0;">
+  <div class="container">
+    <h1 style="font-size:52px;line-height:1.08;">{headline}</h1>
+    {subheadline && <p style="margin-top:14px;max-width:60ch;font-size:18px;">{subheadline}</p>}
+
+    {cta && (
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;">
+        {cta.map((b) => (
+          <a class={"btn " + (b.variant === "primary" ? "primary" : "secondary")} href={b.href}>
+            {b.label}
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,14 @@
+---
+import Section from "./Section.astro";
+const { kicker, headline, items } = Astro.props;
+---
+<Section kicker={kicker} headline={headline}>
+  <div class="grid" style="grid-template-columns: repeat(12, 1fr);">
+    {(items ?? []).map((it) => (
+      <a class="card" style="grid-column: span 3;" href={it.href}>
+        <div style="font-weight:700;">{it.title}</div>
+        <div class="small" style="margin-top:6px;">Öffnen</div>
+      </a>
+    ))}
+  </div>
+</Section>

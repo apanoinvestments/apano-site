@@ -1,0 +1,18 @@
+---
+const { nav } = Astro.props;
+const items = nav?.primary ?? [];
+const cta = nav?.cta;
+---
+<header style="position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:20;">
+  <div class="container" style="display:flex;align-items:center;gap:16px;min-height:64px;">
+    <a href="/" style="font-weight:800;">apano</a>
+
+    <nav style="display:flex;gap:14px;align-items:center;flex:1;flex-wrap:wrap;">
+      {items.map((it) => (
+        <a class="small" href={it.href}>{it.label}</a>
+      ))}
+    </nav>
+
+    {cta && <a class="btn primary" href={cta.href}>{cta.label}</a>}
+  </div>
+</header>

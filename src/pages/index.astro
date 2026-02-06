@@ -1,11 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from "../components/Hero.astro";
+import TrustBar from "../components/TrustBar.astro";
+import CardGrid from "../components/CardGrid.astro";
+import TeaserGrid from "../components/TeaserGrid.astro";
+import QuickLinks from "../components/QuickLinks.astro";
+
+import home from "../content/pages/home.json";
+
+const { page_title, meta_description, nav, sections, footer } = home;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title={page_title} description={meta_description} nav={nav} footer={footer}>
+  {sections.map((s) => {
+    switch (s.type) {
+      case "hero":
+        return <Hero {...s} />;
+      case "trustbar":
+        return <TrustBar {...s} />;
+      case "cards":
+        return <CardGrid {...s} />;
+      case "teasers":
+        return <TeaserGrid {...s} />;
+      case "quicklinks":
+        return <QuickLinks {...s} />;
+      default:
+        return null;
+    }
+  })}
+</BaseLayout>

@@ -1,0 +1,96 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets"
+public_folder: "/assets"
+
+publish_mode: simple
+
+collections:
+  - name: "pages"
+    label: "Seiten"
+    files:
+      - name: "home"
+        label: "Startseite"
+        file: "src/content/pages/home.json"
+        fields:
+          - { label: "Page Title", name: "page_title", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "string" }
+
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - label: "Primärnavigation"
+                name: "primary"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Href", name: "href", widget: "string" }
+              - label: "Header CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Href", name: "href", widget: "string" }
+
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Type", name: "type", widget: "select", options: ["hero","trustbar","cards","teasers","quicklinks"] }
+              - { label: "Kicker", name: "kicker", widget: "string", required: false }
+              - { label: "Headline", name: "headline", widget: "string", required: false }
+              - { label: "Subheadline", name: "subheadline", widget: "string", required: false }
+
+              - label: "CTA (nur Hero)"
+                name: "cta"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Href", name: "href", widget: "string" }
+                  - { label: "Variant", name: "variant", widget: "select", options: ["primary","secondary"] }
+
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Text", name: "text", widget: "string", required: false }
+                  - { label: "Href", name: "href", widget: "string", required: false }
+                  - { label: "CTA Label", name: "ctaLabel", widget: "string", required: false }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - label: "Kontakt"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "E-Mail Label", name: "emailLabel", widget: "string" }
+                  - { label: "E-Mail Href", name: "emailHref", widget: "string" }
+                  - { label: "Adresse", name: "address", widget: "string" }
+              - label: "Rechtliches Links"
+                name: "legal"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Href", name: "href", widget: "string" }
+
+  - name: "news"
+    label: "News"
+    folder: "src/content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Datum", name: "date", widget: "datetime" }
+      - { label: "Kurztext", name: "excerpt", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

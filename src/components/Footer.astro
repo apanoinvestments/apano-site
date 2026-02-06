@@ -1,0 +1,20 @@
+---
+const { footer } = Astro.props;
+---
+<footer style="border-top:1px solid var(--line);padding:40px 0;">
+  <div class="container" style="display:grid;gap:16px;">
+    <div>
+      <div class="kicker">Kontakt</div>
+      <div style="margin-top:6px;">
+        <a href={footer?.contact?.emailHref} class="small">{footer?.contact?.emailLabel}</a>
+      </div>
+      <div class="small" style="margin-top:6px;">{footer?.contact?.address}</div>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      {(footer?.legal ?? []).map((l) => (
+        <a class="small" href={l.href}>{l.label}</a>
+      ))}
+    </div>
+  </div>
+</footer>

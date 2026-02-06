@@ -1,0 +1,21 @@
+---
+const { title, description } = Astro.props;
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <Header {...Astro.props} />
+    <main>
+      <slot />
+    </main>
+    <Footer {...Astro.props} />
+  </body>
+</html>

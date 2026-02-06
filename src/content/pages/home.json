@@ -1,0 +1,90 @@
+{
+  "page_title": "apano Investments – anders denken zahlt sich aus",
+  "meta_description": "Ausgewählte Anlageprodukte, verständliche Einordnung und regelmäßige Updates: Produkte, Webinare, Kurse & Dokumente.",
+  "nav": {
+    "primary": [
+      { "label": "Produkte", "href": "/produkte" },
+      { "label": "Wissen & Updates", "href": "/wissen" },
+      { "label": "Service", "href": "/service" },
+      { "label": "Über uns", "href": "/ueber-uns" }
+    ],
+    "cta": { "label": "Info anfordern", "href": "/service/info-anfordern" }
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "headline": "anders denken zahlt sich aus.",
+      "subheadline": "Ausgewählte Anlageprodukte, verständliche Einordnung und regelmäßige Updates.",
+      "cta": [
+        { "label": "Produkte entdecken", "href": "/produkte", "variant": "primary" },
+        { "label": "Info anfordern", "href": "/service/info-anfordern", "variant": "secondary" }
+      ]
+    },
+    {
+      "type": "trustbar",
+      "items": [
+        { "label": "Inhabergeführt" },
+        { "label": "Webinare" },
+        { "label": "Kurse & Berichte" },
+        { "label": "Download-Center" }
+      ]
+    },
+    {
+      "type": "cards",
+      "kicker": "Produkte im Fokus",
+      "headline": "Schnell zur passenden Information.",
+      "items": [
+        {
+          "title": "apano Global Systematik",
+          "text": "ETF-basierter Aktienfonds mit Wertsicherungskonzept.",
+          "href": "/produkte/apano-global-systematik",
+          "ctaLabel": "Zum Produkt"
+        },
+        {
+          "title": "Solit Edelmetalldepot",
+          "text": "Edelmetalle günstig kaufen und sicher einlagern.",
+          "href": "/produkte/solit-edelmetalldepot",
+          "ctaLabel": "Zum Produkt"
+        },
+        {
+          "title": "Immobilien-Investments",
+          "text": "Themen und Zugänge rund um Immobilien-Investments.",
+          "href": "/produkte/immobilien",
+          "ctaLabel": "Mehr erfahren"
+        }
+      ]
+    },
+    {
+      "type": "teasers",
+      "kicker": "Aktuell bleiben",
+      "headline": "Updates, Einordnung und Aufzeichnungen.",
+      "items": [
+        { "title": "Webinare", "text": "Aufzeichnungen und Themenfilter.", "href": "/wissen/webinare", "ctaLabel": "Zu den Webinaren" },
+        { "title": "News", "text": "Neuigkeiten und Beiträge.", "href": "/wissen/news", "ctaLabel": "Zu den News" }
+      ]
+    },
+    {
+      "type": "quicklinks",
+      "kicker": "Service",
+      "headline": "Dokumente und Wege zur Umsetzung.",
+      "items": [
+        { "title": "Download-Center", "href": "/service/downloads" },
+        { "title": "Geldanlage per Sparplan", "href": "/service/sparplan" },
+        { "title": "comdirect Depot", "href": "/service/comdirect-depot" },
+        { "title": "Kontakt", "href": "/service/kontakt" }
+      ]
+    }
+  ],
+  "footer": {
+    "contact": {
+      "emailLabel": "service(at)apano.de",
+      "emailHref": "mailto:service@apano.de",
+      "address": "apano GmbH · Heiliger Weg 8-10 · 44135 Dortmund"
+    },
+    "legal": [
+      { "label": "Impressum", "href": "/rechtliches/impressum" },
+      { "label": "Datenschutz", "href": "/rechtliches/datenschutz" },
+      { "label": "Cookie-Einstellungen", "href": "/rechtliches/cookies" }
+    ]
+  }
+}
